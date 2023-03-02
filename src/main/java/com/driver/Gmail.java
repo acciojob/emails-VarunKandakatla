@@ -12,14 +12,16 @@ public class Gmail extends Email {
     // It is guaranteed that message is distinct for all mails.
     //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
 //    LinkedHashSet<Email> Inbox=new LinkedHashSet<>();
-    ArrayList<Mail>Inbox=new ArrayList<>();
+    ArrayList<Mail>Inbox;
 //    <Email> Trash=new LinkedHashSet<>();
-    ArrayList<Mail> Trash=new ArrayList<>();
+    ArrayList<Mail> Trash;
     public Gmail(String emailId){
         super(emailId);
     }
     public Gmail(String emailId, int inboxCapacity) {
             super((emailId));
+            Trash=new ArrayList<>();
+            Inbox=new ArrayList<>();
            this.inboxCapacity=inboxCapacity;
     }
 
