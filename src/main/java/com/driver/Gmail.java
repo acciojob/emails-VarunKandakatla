@@ -82,17 +82,18 @@ public class Gmail extends Email {
 
         for(Mail m :Inbox){
             if(m.date.equals(start) && a){
-                i=Inbox.indexOf(m);
                 a=false;
             }
 
-            if(m.date.equals(end) ){
-                j=Inbox.indexOf(m);
-                b=false;
+            if(!m.date.equals(end) && a==false){
+                i++;
             }
+
+            if(m.date.equals(end))
+                break;
         }
 
-        return j-i+1;
+        return i+1;
 
     }
 
